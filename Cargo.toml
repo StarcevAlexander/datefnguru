@@ -1,6 +1,6 @@
 [package]
 name = "datefnguru"
-version = "0.1.0"
+version = "0.1.2"
 edition = "2024"
 description = "date-fns style date utilities for Rust - add, difference, start_of, end_of, days_in_month and 25 more helpers over chrono NaiveDateTime"
 license = "MIT OR Apache-2.0"

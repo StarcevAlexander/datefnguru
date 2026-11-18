@@ -80,7 +80,7 @@ pub fn start_of_year(dt: &NaiveDateTime) -> NaiveDateTime {
 }
 
 pub fn end_of_year(dt: &NaiveDateTime) -> NaiveDateTime {
-    end_of_day(&add_years(&start_of_year(dt), 1))
+    end_of_day(&add_days(&add_years(&start_of_year(dt), 1), -1))
 }
 
 pub fn is_same_day(a: &NaiveDateTime, b: &NaiveDateTime) -> bool {
@@ -104,16 +104,19 @@ pub fn is_leap_year(year: i32) -> bool {
 }
 
 pub fn days_in_month(year: i32, month: u32) -> u32 {
-    let probe = epoch()
-        .with_year(year)
+    let (next_year, next_month) = if month == 12 {
+        (year + 1, 1)
+    } else {
+        (year, month + 1)
+    };
+    let first_of_next = epoch()
+        .with_year(next_year)
         .unwrap()
-        .with_month(month)
+        .with_month(next_month)
         .unwrap()
         .with_day(1)
         .unwrap();
-    add_months(&probe, 1)
-        .signed_duration_since(probe)
-        .num_days() as u32
+    (first_of_next - Duration::days(1)).day()
 }
 
 pub fn difference_in_days(a: &NaiveDateTime, b: &NaiveDateTime) -> i64 {
@@ -213,7 +216,7 @@ mod tests {
         assert_eq!(days_in_month(2028, 2), 29);
         assert_eq!(difference_in_days(&b, &a), 0);
         assert_eq!(difference_in_hours(&b, &a), 12);
-        assert_eq!(quarter(&mid), 1);
+        assert_eq!(quarter(&dt(2026, 2, 1, 0, 0, 0)), 1);
         assert_eq!(quarter(&dt(2026, 8, 1, 0, 0, 0)), 3);
     }
 
