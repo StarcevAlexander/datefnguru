@@ -1,0 +1,14 @@
+[package]
+name = "datefnguru"
+version = "0.1.0"
+edition = "2024"
+description = "date-fns style date utilities for Rust - add, difference, start_of, end_of, days_in_month and 25 more helpers over chrono NaiveDateTime"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/StarcevAlexander/datefnguru"
+homepage = "https://github.com/StarcevAlexander/datefnguru"
+readme = "README.md"
+keywords = ["date", "time", "chrono", "date-fns", "utils"]
+categories = ["date-and-time"]
+
+[dependencies]
+chrono = "0.4"
