@@ -1,8 +1,8 @@
-> **DEPRECATED:** this crate has been renamed to [`datefn-guru`](https://crates.io/crates/datefn-guru). New code should depend on `datefn-guru`.
-
-# datefnguru
+# datefn-guru
 
 **date-fns style date utilities for Rust** — 25+ focused helpers over `chrono::NaiveDateTime`: arithmetic, boundaries (`start_of_day`, `end_of_month`...), comparisons, differences and formatting, all pure functions.
+
+Formerly published on crates.io as `datefnguru`.
 
 For developers coming from JavaScript's [date-fns](https://date-fns.org) who miss small composable functions instead of one giant method object.
 
@@ -10,7 +10,7 @@ For developers coming from JavaScript's [date-fns](https://date-fns.org) who mis
 
 ```rust
 use chrono::NaiveDateTime;
-use datefnguru::{add_months, days_in_month, end_of_month, format_date, is_weekend, start_of_day};
+use datefn_guru::{add_months, days_in_month, end_of_month, format_date, is_weekend, start_of_day};
 
 fn main() {
     let dt = NaiveDateTime::from_timestamp_opt(0, 0).unwrap().with_year(2026).unwrap().with_month(2).unwrap().with_day(10).unwrap();

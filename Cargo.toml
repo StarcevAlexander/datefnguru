@@ -1,11 +1,11 @@
 [package]
-name = "datefnguru"
-version = "0.1.3"
+name = "datefn-guru"
+version = "0.1.0"
 edition = "2024"
-description = "DEPRECATED: renamed to datefn-guru - use that crate instead"
+description = "date-fns style date utilities for Rust - add, difference, start_of, end_of, days_in_month and 25 more helpers over chrono NaiveDateTime"
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/StarcevAlexander/datefnguru"
-homepage = "https://github.com/StarcevAlexander/datefnguru"
+repository = "https://github.com/StarcevAlexander/datefn-guru"
+homepage = "https://github.com/StarcevAlexander/datefn-guru"
 readme = "README.md"
 keywords = ["date", "time", "chrono", "date-fns", "utils"]
 categories = ["date-and-time"]
