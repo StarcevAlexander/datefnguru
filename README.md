@@ -1,3 +1,5 @@
+> **DEPRECATED:** this crate has been renamed to [`datefn-guru`](https://crates.io/crates/datefn-guru). New code should depend on `datefn-guru`.
+
 # datefnguru
 
 **date-fns style date utilities for Rust** — 25+ focused helpers over `chrono::NaiveDateTime`: arithmetic, boundaries (`start_of_day`, `end_of_month`...), comparisons, differences and formatting, all pure functions.
